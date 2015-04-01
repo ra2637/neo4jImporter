@@ -1,0 +1,10 @@
+dept_no,dept_name,:LABEL
+d009,Customer Service,DEPARMENT
+d005,Development,DEPARMENT
+d002,Finance,DEPARMENT
+d003,Human Resources,DEPARMENT
+d001,Marketing,DEPARMENT
+d004,Production,DEPARMENT
+d006,Quality Management,DEPARMENT
+d008,Research,DEPARMENT
+d007,Sales,DEPARMENT
