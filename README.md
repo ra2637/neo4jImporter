@@ -11,6 +11,9 @@ The DB is from MySQL [Employees Sample Database](https://dev.mysql.com/doc/emplo
 - Run it.
 ```sh
   $ mvn dependency:copy-dependencies
-  $ java -cp target/neo4j.importer-0.0.1-SNAPSHOT.jar:target/dependency/* neo4j.importer.embedded.ReadNodes param1 param2
+  $ java -cp target/neo4j.importer-0.0.1-SNAPSHOT.jar:target/dependency/* neo4j.importer.embedded.ReadNodes ../employees_graph/departments.csv DEPARTMENT dept_no
 ```
 - Note must run ReadNodes first then ReadRelations.
+
+### Version
+ - neo4j: 2.1.6
