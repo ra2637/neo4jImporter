@@ -1,5 +1,5 @@
 # neo4j Importer
-Basically, the project is customized for the employee_graph data. But you can modify for your own use.
+Basically, the project is customized for the [employee_graph data](https://github.com/ra2637/neo4jImporter/tree/master/employees_graph). But you can modify for your own use.
   
 This project goal is to load data to neo4j by JAVA API.
 The DB is from MySQL [Employees Sample Database](https://dev.mysql.com/doc/employee/en/employees-introduction.html).
