@@ -13,3 +13,4 @@ The DB is from MySQL [Employees Sample Database](https://dev.mysql.com/doc/emplo
   $ mvn dependency:copy-dependencies
   $ java -cp target/neo4j.importer-0.0.1-SNAPSHOT.jar:target/dependency/* neo4j.importer.embedded.ReadNodes param1 param2
 ```
+- Note must run ReadNodes first then ReadRelations.
