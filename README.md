@@ -12,7 +12,7 @@ The DB is from MySQL [Employees Sample Database](https://dev.mysql.com/doc/emplo
     - Auto create schema when create nodes.
     - Should stop the neo4j server when using.
 - RESTful API:
-    - impelement with neo4j RESTful API.
+    - Impelement with neo4j RESTful API.
     - Not support schema and legacy index.
     - ReadRelations using cypher query to find the nodes and generate the relationship between the nodes.
 
@@ -31,6 +31,7 @@ The DB is from MySQL [Employees Sample Database](https://dev.mysql.com/doc/emplo
   $ mvn dependency:copy-dependencies
   $ java -cp target/neo4j.importer-0.0.1-SNAPSHOT.jar:target/dependency/* neo4j.importer.embedded.ReadNodes ../employees_graph/departments.csv DEPARTMENT dept_no 
 ```
+
     - RESTful API:
 ```sh
   $ mvn dependency:copy-dependencies
