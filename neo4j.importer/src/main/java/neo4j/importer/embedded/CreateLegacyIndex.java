@@ -1,5 +1,7 @@
 package neo4j.importer.embedded;
 
+import java.util.concurrent.TimeUnit;
+
 import org.neo4j.graphdb.DynamicLabel;
 import org.neo4j.graphdb.Label;
 import org.neo4j.graphdb.Node;
@@ -7,6 +9,7 @@ import org.neo4j.graphdb.ResourceIterator;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.index.Index;
 import org.neo4j.graphdb.index.IndexManager;
+import org.neo4j.graphdb.schema.Schema;
 import org.neo4j.tooling.GlobalGraphOperations;
 
 /***
@@ -40,19 +43,28 @@ public class CreateLegacyIndex extends ProcessWrapper {
 		GlobalGraphOperations graphOperations = GlobalGraphOperations
 				.at(graphDb);
 		Index<Node> nodeIndex;
+		
 		try(Transaction tx = graphDb.beginTx()) {
 			IndexManager index = graphDb.index();
-			if(index.existsForNodes(nodeLabel)){
-				nodeIndex = index.forNodes(nodeLabel);
+			if(index.existsForNodes(propertyName)){
+				nodeIndex = index.forNodes(propertyName);
 				nodeIndex.delete();
+				System.out.println("Index "+propertyName+" exists, deleting...");
 			}
+			tx.success();
+			tx.close();
+		}
+		
+		try(Transaction tx = graphDb.beginTx()) {
+			System.out.println("Creating index: "+propertyName+"...");
+			IndexManager index = graphDb.index();
 			nodeIndex = index.forNodes(propertyName);
 			try(ResourceIterator<Node> nodes = graphOperations
 					.getAllNodesWithLabel(label)
 					.iterator()) {
 				while (nodes.hasNext()) {
 					node = nodes.next();
-					nodeIndex.add(node, propertyName, (Long)node.getProperty(propertyName));
+					nodeIndex.add(node, propertyName, node.getProperty(propertyName));
 				}
 				nodes.close();
 			}
