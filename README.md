@@ -17,7 +17,7 @@ The DB is from MySQL [Employees Sample Database](https://dev.mysql.com/doc/emplo
 
 ### Functions
 - Create nodes: neo4j.importer.embedded.ReadNodes [file path] [label name] [index name (from the header key)]
-- Create relationships for nodes: neo4j.importer.embedded.ReadRelations [file path] [fromNodeKey]:[fromNodeLabel] [relationships label name][toNodeKey]:[toNodeLabel]
+- Create relationships for nodes: neo4j.importer.embedded.ReadRelations [file path] [fromNodeKey]:[fromNodeLabel] [relationships label name] [toNodeKey]:[toNodeLabel]
 - Create legacy index: neo4j.importer.embedded.CreateLegacyIndex [node label] [property key name to be indexed]
 
 ### Version
