@@ -59,4 +59,5 @@ You can use the traverse to see the count result, the travserse is designed unde
 
 ### Version
  - neo4j: 2.1.6
-
+ - jersey: 1.18.3
+ - json-lib: 2.4
