@@ -20,5 +20,10 @@ The DB is from MySQL [Employees Sample Database](https://dev.mysql.com/doc/emplo
 - Create relationships for nodes: neo4j.importer.embedded.ReadRelations [file path] [fromNodeKey]:[fromNodeLabel] [relationships label name] [toNodeKey]:[toNodeLabel]
 - Create legacy index: neo4j.importer.embedded.CreateLegacyIndex [node label] [property key name to be indexed]
 
+### Traverse and DB Model example.
+You can use the traverse test to see get some result, the travser is designed under the model.
+- Model structure
+![Graph Model](https://github.com/ra2637/neo4jImporter/blob/master/images/employee_graph.png?raw=true "Graph Model")
+
 ### Version
  - neo4j: 2.1.6
